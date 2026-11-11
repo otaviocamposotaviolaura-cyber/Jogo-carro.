@@ -1,0 +1,31 @@
+:root{--bg:#9fd0ee;--ink:#2B2A33;--accent:#D8452B;--panel:rgba(247,237,214,.94)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#F2E6CC;--panel:rgba(38,41,58,.94)}}
+:root[data-theme="dark"]{--ink:#F2E6CC;--panel:rgba(38,41,58,.94)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+canvas#c{position:fixed;inset:0;width:100%;height:100%}
+#hud{position:fixed;left:10px;top:calc(env(safe-area-inset-top,0px) + 10px);display:flex;flex-direction:column;gap:6px;align-items:flex-start;max-width:calc(100vw - 160px)}
+.chip,#hud button{background:var(--panel);color:var(--ink);border:2px solid var(--ink);border-radius:12px;padding:6px 10px;font:700 15px system-ui,sans-serif}
+#mm{position:fixed;right:10px;top:calc(env(safe-area-inset-top,0px) + 10px);width:110px;height:110px;border-radius:50%;border:3px solid var(--ink);background:#DCCFAE}
+#spd{position:fixed;right:10px;top:calc(env(safe-area-inset-top,0px) + 132px)}
+#arw{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 10px);margin-left:-8px;font-size:30px;line-height:1;color:var(--accent);text-shadow:0 0 3px #fff,0 0 3px #fff;pointer-events:none}
+#toast{position:fixed;left:50%;top:30%;transform:translateX(-50%);opacity:0;pointer-events:none;font:22px "Bowlby One",Impact,sans-serif;color:#fff;text-shadow:0 2px 0 #2B2A33,0 0 8px #2B2A33;text-align:center;white-space:nowrap}
+#toast.on{animation:tt 1.8s ease-out}
+@keyframes tt{0%{opacity:0;transform:translate(-50%,12px)}15%{opacity:1;transform:translate(-50%,0)}80%{opacity:1}100%{opacity:0}}
+.pad{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);display:flex;gap:8px}
+#pl{left:12px}#pr{right:12px}
+.pad button{width:min(18vw,78px);height:min(18vw,78px);border-radius:20px;border:3px solid var(--ink);background:var(--panel);color:var(--ink);font-size:26px;line-height:1;touch-action:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.pad button small{font-size:11px;font-weight:600}
+.pad button.on{background:var(--accent);color:#fff}
+#menu{position:fixed;inset:0;background:rgba(20,18,28,.6);display:flex;align-items:center;justify-content:center;padding:16px}
+#menu.off{display:none}
+.card{width:min(92vw,380px);background:var(--panel);color:var(--ink);border:3px solid var(--ink);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.card h2{font:30px "Bowlby One",Impact,sans-serif;margin:0}
+.card p{margin:0;font-size:14px;line-height:1.4}
+.sw{display:flex;gap:10px}
+.sw button{width:38px;height:38px;border-radius:50%;border:3px solid var(--ink);padding:0}
+.sw button.sel{outline:3px solid var(--accent);outline-offset:2px}
+.card button.up,#go{padding:12px;border-radius:12px;border:2px solid var(--ink);background:var(--panel);color:var(--ink);font:600 15px system-ui,sans-serif}
+.card button.up:disabled{opacity:.45}
+#go{background:var(--accent);color:#fff;font-size:18px}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}

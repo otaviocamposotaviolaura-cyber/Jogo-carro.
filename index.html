@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Rota Livre 3D</title>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<canvas id="mm" width="110" height="110"></canvas>
+<div id="arw">▲</div>
+<div id="hud">
+  <div class="chip" id="mny">$0</div>
+  <div class="chip" id="mis">—</div>
+  <button id="gb">Garagem</button>
+</div>
+<div class="chip" id="spd">0 km/h</div>
+<div id="toast"></div>
+<div class="pad" id="pl">
+  <button id="bl" aria-label="Esquerda">◀</button>
+  <button id="br" aria-label="Direita">▶</button>
+</div>
+<div class="pad" id="pr">
+  <button id="bb" aria-label="Freio">▼<small>Freio</small></button>
+  <button id="bd" aria-label="Drift">≋<small>Drift</small></button>
+  <button id="bg" aria-label="Acelerar">▲<small>Acelerar</small></button>
+</div>
+<div id="menu">
+  <div class="card">
+    <h2>Rota Livre 3D</h2>
+    <p>Dirija por uma cidade sem fim, de dia e de noite. Pegue moedas, faça entregas no tempo e melhore o carro na garagem.</p>
+    <div id="gar" style="display:flex;flex-direction:column;gap:10px"></div>
+    <button id="go">Dirigir</button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
